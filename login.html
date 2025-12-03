@@ -19,14 +19,20 @@
         <section class="login-container">
             <h2>Авторизація</h2>
             <form id="login-form">
+                <label for="login">Логін:</label>
+                <input type="text" id="login" placeholder="Введіть логін (тільки латиниця)" required>
+
                 <label for="email">Email:</label>
                 <input type="email" id="email" placeholder="Введіть email" required>
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" placeholder="+380XXXXXXXXX" required>
                 
                 <label for="password">Пароль:</label>
                 <input type="password" id="password" placeholder="Введіть пароль" required>
                 
                 <button type="submit">Увійти</button>
-                <p id="error-message" class="hidden">❌ Неправильний email або пароль!</p>
+                <p id="error-message" style="color: red; display: none;"></p>
             </form>
             <p>Ще не маєте акаунта? <a href="#">Зареєструйтесь</a></p>
         </section>
