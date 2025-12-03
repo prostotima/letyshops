@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetyShops – Кешбек на покупки</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/shop.js"></script>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/shop.css">
+</head>
+
+<body>
+ 
+    <!-- 🔹 Главный баннер -->
+<section class="banner">
+    <img src="images/logo2.jpg" alt="Кешбек на покупки" class="banner-image">
+    <h1>Отримуйте кешбек за покупки!</h1>
+    <p>Реєструйтесь та економте разом з нами.</p>
+    <a href="login.html" class="shop-button">Приєднатися</a>
+</section>
+
+
+
+
+<section class="search-container">
+    
+    <input type="text" id="search-input" placeholder="🔍 Введіть назву магазину...">
+    <button onclick="searchShop()">Шукати</button>
+</section>
+
+    <!-- 🔹 Каталог магазинов -->
+    <section class="shops">
+        <h2>Популярні магазини</h2>
+        <div class="shop-grid">
+            <div class="shop-card">
+                <img src="images/shop1.jpg" alt="Answear">
+                <h3>Answear</h3>
+                <p>Кешбек: до 5%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+            <div class="shop-card">
+                <img src="images/shop2.jpg" alt="MODIVO">
+                <h3>MODIVO</h3>
+                <p>Кешбек: до 7%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+            <div class="shop-card" data-name="EVA">
+                <img src="images/shop3.jpg" alt="Магазин 3">
+                <h3>EVA</h3>
+                <p>Кешбек: до 5%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+            <div class="shop-card">
+                <img src="images/shop4.jpg" alt="Магазин 4">
+                <h3>Фокстрот</h3>
+                <p>Кешбек: до 6%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+            <div class="shop-card">
+                <img src="images/shop5.jpg" alt="Магазин 5">
+                <h3>Книгарня Є</h3>
+                <p>Кешбек: до 5%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+
+            <div class="shop-card">
+                <img src="images/shop6.jpg" alt="Магазин 6">
+                <h3>YABLOKI</h3>
+                <p>Кешбек: до 10%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+
+            <div class="shop-card">
+                <img src="images/shop7.jpg" alt="Магазин 7">
+                <h3>PRM</h3>
+                <p>Кешбек: до 7%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+
+            <div class="shop-card">
+                <img src="images/shop8.jpg" alt="Магазин 8">
+                <h3>Prom</h3>
+                <p>Кешбек: до 10%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+            <div class="shop-card">
+                <img src="images/shop9.jpg" alt="Магазин 9">
+                <h3>Цитрус</h3>
+                <p>Кешбек: до 12%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+            <div class="shop-card">
+                <img src="images/shop10.jpg" alt="Магазин 10">
+                <h3>HOTLINE Finance</h3>
+                <p>Кешбек: до 10%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+            <div class="shop-card">
+                <img src="images/shop11.jpg" alt="Магазин 11">
+                <h3>АТБ</h3>
+                <p>Кешбек: до 10%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>   
+            <div class="shop-card">
+                <img src="images/shop12.jpg" alt="Магазин 12">
+                <h3>NOTINO</h3>
+                <p>Кешбек: до 10%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+
+            <div class="shop-card">
+                <img src="images/shop13.jpg" alt="Магазин 13">
+                <h3>KASTA</h3>
+                <p>Кешбек: до 9%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+            <div class="shop-card">
+                <img src="images/shop14.jpg" alt="Магазин 14">
+                <h3>COMFY</h3>
+                <p>Кешбек: до 14%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+
+            <div class="shop-card">
+                <img src="images/shop15.jpg" alt="Магазин 15">
+                <h3>Аврора</h3>
+                <p>Кешбек: до 15%</p>
+                <a href="#" class="shop-button">Перейти</a>
+            </div>
+
+        </div>
+
+        
+        <div class="oops-button-container">
+            <a href="oops.html" class="oops-button">Більше магазинів</a>
+        </div>
+        
+    </section>
+
+    <section class="container style-panel">
+        <h2>🎨 Панель стилів</h2>
+        <div class="style-controls">
+            <label>Колір фону:
+            <input type="color" id="bgColorPicker">
+            </label>
+            <label>Розмір шрифту:
+            <input type="number" id="fontSizePicker" value="16" min="10" max="40"> px
+            </label>
+            <button onclick="applyStyles()">Застосувати</button>
+        </div>
+    </section>
+
+    <section class="container api-section">
+        <h2>📦 Дані з API</h2>
+        <button onclick="loadUsers()">Завантажити користувачів</button>
+        <ul id="userList"></ul>
+    </section>
+
+
+    <!-- 🔹 Футер -->
+    <footer>
+        <p>&copy; 2025 LetyShops | Усі права захищені</p>
+        <div class="footer-links">
+            <a href="about.html">Політика конфіденційності</a>
+            <a href="about.html">Контакти</a>
+            <a href="about.html">Підтримка</a>
+        </div>
+    </footer>
+    <script src="scripts/search.js"></script> 
+    <script src="scripts/scripts.js"></script> 
+</body>
+</html>

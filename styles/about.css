@@ -1,0 +1,56 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-section, .history, .benefits, .team, .reviews, .faq, .terms, .contacts {
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #222;
+}
+
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+ul li::before {
+    content: "✅ ";
+    color: green;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.member img {
+    width: 150px; /* Ширина изображения */
+    height: 200px; /* Высота для прямоугольного формата */
+    border-radius: 8px; /* Скругленные углы, но не круг */
+    object-fit: cover; /* Сохранение пропорций */
+}
+
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}

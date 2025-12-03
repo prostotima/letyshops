@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сторінка авторизації LetyShops">
+    <title>Вхід | LetyShops</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/login.js" defer></script>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/header.css">
+    
+</head>
+<body>
+
+    <main>
+        <section class="login-container">
+            <h2>Авторизація</h2>
+            <form id="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Введіть email" required>
+                
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" placeholder="Введіть пароль" required>
+                
+                <button type="submit">Увійти</button>
+                <p id="error-message" class="hidden">❌ Неправильний email або пароль!</p>
+            </form>
+            <p>Ще не маєте акаунта? <a href="#">Зареєструйтесь</a></p>
+        </section>
+        
+    </main>
+        
+    
+
+    <footer>
+        <p>&copy; 2025 LetyShops | Усі права захищені</p>
+    </footer>
+
+</body>
+</html>

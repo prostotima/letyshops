@@ -1,0 +1,146 @@
+// === Переменные ===
+$primary-color: #ffcc00;
+$secondary-color: #e6b800;
+$text-color: #333;
+$background-light: linear-gradient(to bottom, #fff, #f8f9fa);
+$font-stack: 'Roboto', Arial, sans-serif;
+
+// === Миксин для кнопок ===
+@mixin button-style($bg-color) {
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    background-color: $bg-color;
+
+    &:hover {
+        background-color: $secondary-color;
+        transform: scale(1.05);
+    }
+}
+
+// === Общие стили ===
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-stack;
+    background: $background-light;
+    color: $text-color;
+}
+
+// === Контейнер ===
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+// === Заголовки ===
+h1, h2 {
+    font-weight: bold;
+    color: color.adjust($text-color, $lightness: -20%);
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+// === Кнопки ===
+button {
+    @include button-style(#382d00);
+}
+
+// === Карточки ===
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.shop-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+
+    img {
+        width: 100%;
+        max-width: 120px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+}
+
+// === Футер ===
+footer {
+    background-color: color.adjust($text-color, $lightness: -50%);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+
+        a {
+            color: $primary-color;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+// === Адаптивность ===
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .shop-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .shop-card {
+        padding: 10px;
+    }
+}

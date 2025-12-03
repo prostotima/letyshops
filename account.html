@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акаунт | LetyShops</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/account.js" defer></script>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/account.css">
+</head>
+<body>
+
+    
+  
+    <main class="account-container">
+        <aside class="sidebar">
+            <h2>Мій акаунт</h2>
+            <ul>
+                <li><button onclick="showSection('history')">🛒 Історія покупок</button></li>
+                <li><button onclick="showSection('shops')">🏬 Історія магазинів</button></li>
+                <li><button onclick="showSection('settings')">⚙️ Налаштування</button></li>
+                <li><button onclick="showSection('help')">📩 Допомога</button></li>
+                <li><button onclick="showSection('invite')">🎁 Запросити друга</button></li>
+                <li><button onclick="logout()">🚪 Вийти</button></li>
+            </ul>
+        </aside>
+        
+        <section class="content">
+            <div id="history" class="account-section">
+                <h2>🛒 Історія покупок</h2>
+                <p>Тут відображаються всі ваші покупки та кешбек.</p>
+            </div>
+        
+            <div id="shops" class="account-section hidden">
+                <h2>🏬 Історія магазинів</h2>
+                <p>Список магазинів, у яких ви робили покупки через кешбек.</p>
+            </div>
+        
+            <div id="settings" class="account-section hidden">
+                <h2>⚙️ Налаштування</h2>
+                <p>Змініть ваш логін або пароль.</p>
+                
+                <form id="settings-form">
+                    <label for="new-email">Новий Email:</label>
+                    <input type="email" id="new-email" placeholder="Введіть новий email">
+                    
+                    <label for="new-password">Новий Пароль:</label>
+                    <input type="password" id="new-password" placeholder="Введіть новий пароль">
+                    
+                    <button type="submit">Зберегти зміни</button>
+                </form>
+            
+                <p id="settings-confirmation" class="hidden">✅ Дані змінені успішно!</p>
+            </div>
+            
+        
+            <!-- 🔹 Вкладка "Допомога" -->
+            <div id="help" class="account-section hidden">
+                <h2>📩 Звернення до підтримки</h2>
+                <p>Напишіть ваше питання або проблему, і ми допоможемо вам!</p>
+                <form id="support-form">
+                    <label for="message">Ваше звернення:</label>
+                    <textarea id="message" placeholder="Напишіть ваше питання..." required></textarea>
+                    <button type="submit">Надіслати</button>
+                </form>
+                <p id="support-confirmation" class="hidden">✅ Звернення відправлено! Ми відповімо найближчим часом.</p>
+            </div>
+        
+            <!-- 🔹 Вкладка "Запросити друга" -->
+            <div id="invite" class="account-section hidden">
+                <h2>🎁 Запросіть друга та отримайте кешбек!</h2>
+                <p>Поділіться вашим реферальним посиланням і отримайте бонус!</p>
+                <div class="share-container">
+                    
+                    <button onclick="copyLink()">Поділитися</button>
+                </div>
+                <p id="copy-message" class="hidden">🔗 Посилання скопійовано! Гарних покупок!</p>
+            </div>
+        </section>
+        
+    </main>
+
+</body>
+</html>
