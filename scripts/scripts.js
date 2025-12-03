@@ -133,3 +133,55 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("Елементи для завдання Set не знайдені (check-btn або word-input)!");
     }
 });
+
+
+// ЗАВДАННЯ: Fetch API (APIs.guru)
+
+const apiBtn = document.getElementById('load-api-btn');
+const apiListContainer = document.getElementById('api-list');
+
+if (apiBtn) {
+    apiBtn.addEventListener('click', loadAPIs);
+}
+
+
+async function loadAPIs() {
+    apiListContainer.innerHTML = '<p>Завантаження даних...</p>';
+
+    try {
+        const response = await fetch('https://api.apis.guru/v2/list.json');
+
+        if (!response.ok) {
+            throw new Error(`HTTP помилка! Статус: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        apiListContainer.innerHTML = '';
+
+        const apis = Object.values(data).slice(0, 12);
+
+        apis.forEach(apiData => {
+           const version = apiData.versions[apiData.preferred];
+            const info = version.info;
+
+            const logoUrl = info['x-logo'] ? info['x-logo'].url : 'https://via.placeholder.com/64?text=No+Img';
+            
+            const card = document.createElement('div');
+            card.className = 'api-card';
+            
+            card.innerHTML = `
+                <img src="${logoUrl}" alt="${info.title}" onerror="this.src='https://via.placeholder.com/64?text=Error'">
+                <h4>${info.title}</h4>
+                <p style="font-size: 12px; color: gray;">Ver: ${version.info.version}</p>
+                <a href="${info.contact ? info.contact.url : '#'}" target="_blank" style="font-size: 12px;">Детальніше</a>
+            `;
+
+            apiListContainer.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error('Помилка при отриманні API:', error);
+        apiListContainer.innerHTML = `<p style="color: red;">Не вдалося завантажити дані: ${error.message}</p>`;
+    }
+}
