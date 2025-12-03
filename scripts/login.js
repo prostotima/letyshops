@@ -37,3 +37,15 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         
     }
 });
+
+const loginInput = document.getElementById('login');
+
+loginInput.addEventListener('input', function() {
+    const currentValue = this.value;
+    
+   const regex = /[^a-zA-Z0-9]/g;
+    
+    if (currentValue.search(regex) !== -1) {
+        this.value = currentValue.replace(regex, '');
+    }
+});
